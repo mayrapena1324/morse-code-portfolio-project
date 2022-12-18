@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <h1>Morse Code Generator</h1>
+    <form method="POST" action="{{ url_for('morse_text') }}">
+        {{ form.csrf_token }}
+        <p>Enter the text you would like to encrypt: {{ form.text }} {{ form.submit }}</p>
+    </form>
+</head>
+<body>
+
+</body>
+</html>
