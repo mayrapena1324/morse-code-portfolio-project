@@ -1,16 +1,19 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template
 from flask_wtf import FlaskForm
-from flask_bootstrap import Bootstrap
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+from morse import Morse
 
-#
-#  a) Get /morse route to work
+#  a) Find api that plays morse code text
 #  b) create morse code class
-#  c) template inheritance?
+#  c) add decrypt capabilities
+#  d) bootstrap
+#  e) host
+#  f) ensure all symbols are included in dict or find api that has letters
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'SECRET_KEY'  #
+app.config['SECRET_KEY'] = 'SECRET_KEY'
 
 
 # Dictionary representing the morse code chart
@@ -36,17 +39,6 @@ class TextToEncrypt(FlaskForm):
     submit = SubmitField("Encrypt")
 
 
-def create_morse(message):
-    ciphered_text = ""
-    for letter in message:
-        if letter == " ":
-            ciphered_letter = " / "
-        else:
-            ciphered_letter = MORSE_CODE_DICT[letter]
-        ciphered_text += ciphered_letter + " "
-    return ciphered_text
-
-
 @app.route("/", methods=["GET", "POST"])
 def home():
     form = TextToEncrypt()
@@ -55,9 +47,11 @@ def home():
 
 @app.route("/morse", methods=["GET", "POST"])
 def morse_text():
-    text = input("What would you like to translate to morse code? Type your text here: ").upper()
-    encrypted_text = create_morse(text)
-    return render_template("morse_text.html", message=encrypted_text)
+    form = TextToEncrypt()
+    text = form.text.data
+    morse = Morse()
+    message = morse.create_morse(text.upper())
+    return render_template("morse_text.html", message=message)
 
 
 if __name__ == '__main__':
