@@ -1,2 +1,2 @@
 # morse-code-portfolio-project
- This project takes strings as an input and returns the string in morse code.  
+ <h2> This project uses Flask and Python to take a string as an input and give you the text in morse code. </h2>
