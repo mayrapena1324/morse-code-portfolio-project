@@ -10,6 +10,7 @@ from morse import Morse
 #  d) bootstrap
 #  e) host
 #  f) ensure all symbols are included in dict or find api that has letters
+#  h) add users and save their morse searches with postgreSQL database
 
 
 app = Flask(__name__)
