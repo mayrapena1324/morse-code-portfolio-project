@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -11,7 +12,7 @@ from morse import Morse
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SECRET_KEY'
-
+Bootstrap(app)
 
 class TextToEncrypt(FlaskForm):
     text = StringField("Text", validators=[DataRequired()])
