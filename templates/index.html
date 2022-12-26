@@ -5,12 +5,12 @@
     <div>
         <h1>Welcome to Mayra's Morse Website!</h1>
         <h3>Please choose an option below to get translating</h3>
-        <div class="container">
-            <a href="{{url_for('to_english') }}">
-                <button type="button" class="btn btn-outline-success">Demorsify</button>
+        <div class="container-fluid translate-btn">
+            <a href="{{url_for('to_english') }}" class="translate-btn">
+                <button type="button" class="btn btn-outline-success translate-btn">Demorsify</button>
             </a>
-            <a href="{{url_for('morse_text') }}">
-                <button type="button" class="btn btn-outline-dark">Morsify</button>
+            <a href="{{url_for('morse_text') }}" class="translate-btn">
+                <button type="button" class="btn btn-outline-dark translate-btn">Morsify</button>
             </a>
         </div>
     </div>
