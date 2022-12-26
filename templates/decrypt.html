@@ -1,10 +1,16 @@
 {% include "header.html" %}
 
 <body>
-    <h1>Morse Code Translator</h1>
-    <form method="POST" action="{{ url_for('show_results') }}">
-        {{ form.csrf_token }}
-        <p>Enter the text you would like to encrypt: {{ form.text }} {{ form.submit }}</p>
-    </form>
+<div class="container-fluid forms  d-flex flex-column justify-content-center">
+    <div>
+        <h1 class="d-flex justify-content-center">Morse Code Translator</h1>
+    </div>
+    <div>
+        <form class="d-flex justify-content-center" method="POST" action="{{ url_for('show_results') }}">
+            {{ form.csrf_token }}
+            <p>Enter the text you would like to encrypt: {{ form.text }} {{ form.submit }}</p>
+        </form>
+    </div>
+</div>
 </body>
 </html>
