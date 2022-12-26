@@ -1,0 +1,11 @@
+<head>
+    {% include "header.html" %}
+</head>
+<body>
+    <h1>Morse Code Translator</h1>
+    <form method="POST" action="{{ url_for('show_results') }}">
+        {{ form.csrf_token }}
+        <p>Enter the text you would like to encrypt: {{ form.text }} {{ form.submit }}</p>
+    </form>
+</body>
+</html>
