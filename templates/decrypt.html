@@ -6,9 +6,9 @@
         <h1 class="d-flex justify-content-center">Morse Code Translator</h1>
     </div>
     <div>
-        <form class="d-flex justify-content-center" method="POST" action="{{ url_for('show_results') }}">
+        <form class="d-flex justify-content-center" method="POST" action="{{ url_for('show_english_results') }}">
             {{ form.csrf_token }}
-            <p>Enter the text you would like to encrypt: {{ form.text }} {{ form.submit }}</p>
+            <p>Enter the text you would like to translate: {{ form.text }} {{ form.submit }}</p>
         </form>
     </div>
 </div>

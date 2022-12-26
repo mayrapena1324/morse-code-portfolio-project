@@ -35,12 +35,21 @@ def morse_text():
     return render_template("encrypt.html", form=form)
 
 
-@app.route("/translate", methods=["GET", "POST"])
-def show_results():
+@app.route("/translate/morse", methods=["GET", "POST"])
+def show_morse_results():
     form = TextToEncrypt()
     text = form.text.data
     morse = Morse()
     message = morse.create_morse(text)
+    return render_template("morse_text.html", message=message)
+
+
+@app.route("/translate/english", methods=["GET", "POST"])
+def show_english_results():
+    form = TextToEncrypt()
+    text = form.text.data
+    morse = Morse()
+    message = morse.decrypt_morse(text)
     return render_template("morse_text.html", message=message)
 
 
