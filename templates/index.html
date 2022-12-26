@@ -1,18 +1,23 @@
 {% include "header.html" %}
 
 <body>
-<div class="container-fluid forms  d-flex flex-column justify-content-center">
+<div class="container-fluid forms d-flex flex-column justify-content-center">
     <div>
-        <h1>Welcome to Mayra's Morse Website!</h1>
-        <h3>Please choose an option below to get translating</h3>
-        <div class="container-fluid translate-btn">
-            <a href="{{url_for('to_english') }}" class="translate-btn">
-                <button type="button" class="btn btn-outline-success translate-btn">Demorsify</button>
+        <div>
+            <h1 class="d-flex justify-content-center">Welcome to Mayra's Morse Website!</h1>
+        </div>
+        <div>
+            <h3 class="d-flex justify-content-center">Please choose an option below to get translating</h3>
+        </div>
+        <div  class="container-fluid forms d-flex-row">
+            <a href="{{url_for('to_english') }}" class="translate-btn d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-success">Demorsify</button>
             </a>
-            <a href="{{url_for('morse_text') }}" class="translate-btn">
-                <button type="button" class="btn btn-outline-dark translate-btn">Morsify</button>
+            <a href="{{url_for('morse_text') }}" class="translate-btn d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-dark">Morsify</button>
             </a>
         </div>
     </div>
+</div>
 </body>
 </html>
